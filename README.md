@@ -21,13 +21,13 @@ Steganography can be defined as ”masking the existence of secret information.�
 
 # Run 1 Bit LSB:
 - Run the python code in  command prompt and make sure the secret and cover images are in 'images' folder and are in jpg format.
-- Encryption : steganography_1bit.py merge --img1=images/cover.jpg --img2=images/secret.jpg --output=images/cipher.png.
-- Decryption : steganography_1bit.py unmerge --img=images/cipher.png --output=images/extracted.png.
+- Encryption : `steganography_1bit.py merge --img1=images/cover.jpg --img2=images/secret.jpg --output=images/cipher.png`.
+- Decryption : `steganography_1bit.py unmerge --img=images/cipher.png --output=images/extracted.png`.
 
 # Run 4 Bit LSB:
 - Run the python code in  command prompt and make sure the secret and cover images are in 'images' folder and are in jpg format.
-- Encryption : steganography_4bit.py merge --img1=images/cover.jpg --img2=images/secret.jpg --output=images/cipher.png.
-- Decryption : steganography_4bit.py unmerge --img=images/cipher.png --output=images/extracted.png.
+- Encryption : `steganography_4bit.py merge --img1=images/cover.jpg --img2=images/secret.jpg --output=images/cipher.png`.
+- Decryption : `steganography_4bit.py unmerge --img=images/cipher.png --output=images/extracted.png`.
 
 # Run CNN for Deep Steganography:
 - Firstly, change the train path(in the code, it is named as TRAIN_PATH) to the pathway in which you have stored the dataset. It is better if you store the dataset in your google drive. For example, the pathway I have given in my system is ‘/content/drive/My Drive/Semantic dataset100/’. Here, “Semantic dataset100” is the name of the dataset.
