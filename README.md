@@ -30,9 +30,9 @@ Steganography can be defined as ”masking the existence of secret information.�
 - Decryption : `steganography_4bit.py unmerge --img=images/cipher.png --output=images/extracted.png`.
 
 # Run CNN for Deep Steganography:
-- Firstly, change the train path(in the code, it is named as TRAIN_PATH) to the pathway in which you have stored the dataset. It is better if you store the dataset in your google drive. For example, the pathway I have given in my system is ‘/content/drive/My Drive/Semantic dataset100/’. Here, “Semantic dataset100” is the name of the dataset.
+- Firstly, change the train path(in the code, it is named as TRAIN_PATH) to the pathway in which you have stored the dataset. It is better if you store the dataset in your google drive. For example, the pathway I have given in my system is : `/content/drive/My Drive/Semantic dataset100/`. Here, “Semantic dataset100” is the name of the dataset.
 
-- Next, change the LOGS_Path and the CHECKPOINTS_PATH pathways to something of your liking. Again, it is preferred if these directories are stored in google drive. Create two separate folders in your drive for this purpose. For example, in my system, LOGS_Path = ‘/content/drive/My Drive/StegLogs/’ and CHECKPOINTS_PATH = ‘/content/drive/My Drive/StegOutput/’.
+- Next, change the LOGS_Path and the CHECKPOINTS_PATH pathways to something of your liking. Again, it is preferred if these directories are stored in google drive. Create two separate folders in your drive for this purpose. For example, in my system, LOGS_Path = `/content/drive/My Drive/StegLogs/` and CHECKPOINTS_PATH = `/content/drive/My Drive/StegOutput/`.
 
 - After this, run all the cells sequentially in order upto cell number 12. This cell is the cell where the training of the neural network takes place. It may run for more than a few days. Let it. Do not execute any other part of the code in this time.
 
@@ -44,20 +44,21 @@ Steganography can be defined as ”masking the existence of secret information.�
 
 - Once this is done, run cell number 13 as it is.
 
-- From cell number 14 to the end, type the following code at the beginning of each cell :-    with tf.Session() as sess:
-saver = tf.train.import_meta_graph('/content/drive/My Drive/StegOutput/beta_0.75.chkp-30865.meta/')
-saver.restore(sess, '/content/drive/My Drive/StegOutput/beta_0.75.chkp-30865')
+- From cell number 14 to the end, type the following code at the beginning of each cell :-    
+`with tf.Session() as sess:
+    saver = tf.train.import_meta_graph('/content/drive/My Drive/StegOutput/beta_0.75.chkp-30865.meta/')
+    saver.restore(sess, '/content/drive/My Drive/StegOutput/beta_0.75.chkp-30865')`
 
 - Change the value 30865 to whatever global_step value you had given last in cell number 10. 30865 is what I obtained in my training. It may be different for different systems. Also, if needed, change the directory name from “StegOutput” to whatever directory name you have given for the directory where your checkpoint files are stored.If you wish to save the inputs and outputted data for further operations, then create two folders and type out the following code at the end of cell number 14:- 
-plt.imsave('/content/drive/My Drive/StegInput/cover.png', denormalize_batch(cover))
-plt.imsave('/content/drive/My Drive/StegInput/secret.png', denormalize_batch(secret))
- Here, “StegInput” is the name I have given for the directory which stores the input files. You can change the name to whatever you would like.
+`plt.imsave('/content/drive/My Drive/StegInput/cover.png', denormalize_batch(cover))
+plt.imsave('/content/drive/My Drive/StegInput/secret.png', denormalize_batch(secret))`
+Here, “StegInput” is the name I have given for the directory which stores the input files. You can change the name to whatever you would like.
 For the Stego Image, use the following code at the end of cell number 15:-
-plt.imsave('/content/drive/My Drive/StegSave/output.png', denormalize_batch(hidden.squeeze()))
+`plt.imsave('/content/drive/My Drive/StegSave/output.png', denormalize_batch(hidden.squeeze()))`
 Again, Stegsave is simply a directory name and can be altered according to your preferrence. This directory stores the outputted Stego Image.
 
 - Use this code at the end of cell 16 for the revealed secret image.
-plt.imsave('/content/drive/My Drive/StegSave/output1.png', denormalize_batch(revealed.squeeze()))
+`plt.imsave('/content/drive/My Drive/StegSave/output1.png', denormalize_batch(revealed.squeeze()))`
 Now you can run the cells sequentially in order from cell 14 upto the end.
         
 # Run PSNR:
