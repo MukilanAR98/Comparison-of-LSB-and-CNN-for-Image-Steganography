@@ -1,4 +1,4 @@
-# Comparison-of-LSB-and-CNN-for-Image-Steganography
+# Comparison-of-LSB-and-CNN-for-Image-Steganography.
 Steganography can be defined as ”masking the existence of secret information.” There are many algorithms available to perform Steganography. In this project, we will be using the Least Significant Bit(abbreviated as LSB) technique to perform Steganography. In addition, we will be designing a Convolutional Neural Network to perform the same Steganography and perform a comparative study of the results obtained from the LSB technique and the CNN.
 
 # Software Requirements
